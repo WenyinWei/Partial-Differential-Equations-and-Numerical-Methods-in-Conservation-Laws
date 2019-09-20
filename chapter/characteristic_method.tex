@@ -1,0 +1,134 @@
+\part{Characteristic Methods}
+\section{Characteristic Methods}
+\subsection{Characteristic Methods}
+We have seen many conservation laws in our daily math and physcis research. Here the introduction to the PDE is omitted temporarily.
+\subsubsection{Linear Equation}
+\begin{example}
+\begin{equation}
+\left\{\begin{matrix}
+	\partial_t u+a\partial_x u=0, &x\in \mathbb{R},  & t>0 \\ 
+	u(x,0)=u_0(x), & x\in \mathbb{R}, & 
+	\end{matrix}\right.
+\end{equation}
+Solution: $$x=x(t), \frac{dx}{dt}=a$$
+
+$$u(x,t)=u(x(t),t)=z(t)$$
+
+$$\frac{dz}{dt}=\partial_x u\cdot \frac{dx}{dt}+\partial_t u=0$$
+
+$$
+\left\{\begin{matrix}
+\frac{\mathrm{d} x}{\mathrm{d} t}=a, &x(0)=x_0 ,  & x=at+x_0\\ 
+\frac{\mathrm{d} z}{\mathrm{d} t}=a, & z(0)=u_0(x_0), & u(x,t)=u_0(x-at) 
+\end{matrix}\right.
+$$
+
+
+\end{example}
+
+Characteristic surface, $\mathcal{S}=\{(x, y, u(x, y))\}$. Its normal vector is $(\partial_x u, \partial_y u, -1)$.
+\subsection{Boundary Data}
+Non-characteristic boundary data is required which means that the boundary tangent direction should be \textbf{non-parallel} with the characteristic lines.
+
+The typical boundary in 2D problem is parameterized as $\Gamma=\left\{(x, y), \cdots\},  y=\left\{\left(\gamma_{1}(s), \gamma_{2}(s)\right), r\in\cdots\right\}\right.$ The non-characteristic condition is $(a, b) \cdot\left(-\gamma_{2}^{\prime}(r), \gamma_{1}^{\prime}(r)\right) \neq 0$. $r$ serves as the position parameter showing the location of the boundary data along with characteristic line. $s$ serves as the time parameter denoting the time evolution, while $s=0$ means the initial point of the characteristic line, that is, the corresponding boundary data point.
+
+The general linear PDE is as the following:
+
+\begin{equation}
+\left\{\begin{matrix}
+a(x, y) \partial_{x} u+b(x, y) \partial_y u=c(x, y), &a, b, c \in C^{1} \\ 
+\left.u(x, y)\right|_{\Gamma}=\phi(x, y), \quad &\text { when } \quad \Gamma=\left\{\left(\gamma_{1}(r), \gamma_{2}(r)\right), r \in \cdots\right\}
+\end{matrix}\right.
+\end{equation}
+
+$$
+\left\{\begin{array}{ll}{\frac{d x}{d s}(r,s)=a(x(s), y(s))}& x(r,0)=\gamma_1(r) \\
+{\frac{d y}{d s}(r,s)=b(x(s), y(s))} & y(r,0)=\gamma_2(r) \\
+{\frac{d z}{d s}(r,s)=c(x(s), y(s))} & z(r,0)=\phi(\gamma_1(r), \gamma_2(r)) \end{array}\right.
+$$
+\begin{lemma}
+Suppose $a, b, c \in C^{1}$, $\Gamma$ is non-characteristic, 
+$$
+G(r, s)=\left(\begin{array}{l}{x(r, s)} \\ {y(r, s)}\end{array}\right)
+$$
+then
+$$
+\exists\ G^{-1}(x, y)=\left(\begin{array}{l}{R(x, y)} \\ {S(x, y)}\end{array}\right) \quad \text { near }(r, 0)
+$$
+\end{lemma}
+\begin{proof}
+To be filled.
+\end{proof}
+\subsubsection{Semilinear Equation}
+A difference is made in semilinear case. $c(x,y)$ now becomes $c(x,y,u)$.
+
+\begin{equation}
+a(x, y) \partial_{x} u+b(x, y) \partial_y u=c(x, y,u)
+\end{equation}
+
+\begin{example}
+$$
+\left\{\begin{array}{l}{\partial_{t} u+a \partial_{x}u=u^{2}} \\ {w(x, 0)=\cos x, \quad \text{on}\quad \Gamma=\{(x, 0), x \in \mathbb{R}\}}\end{array}\right.
+$$
+\end{example}
+
+\begin{example}
+$$
+\left\{\begin{array}{l}{\partial_x u+x \partial_y u=u} \\ {u(1, y)=h(y),\quad y \in \mathbb{R}}\end{array}\right.
+$$
+\end{example}
+
+\subsubsection{Quasilinear Equation}
+$a(x,y)$ and $b(x,y)$ are more complex in quasilinear case, becoming $a(x,y,u)$ and $b(x,y,u)$.
+
+$$
+\left.\left(a\left(\gamma_{1}, \gamma_{2}, \phi\right), b\left(\gamma_{1}, \gamma_{2}, \phi\right)\right)\left(-\gamma_{2}^{\prime}(r), \gamma_{1}^{\prime}( r\right)\right) \neq 0
+$$
+
+\begin{example}
+$$
+\left\{\begin{array}{l}{\partial_t u+u \partial_x u=0, t>0, x\in\mathbb{R}} \\ {u(x,0)=\phi(x)}\end{array}\right.
+$$
+
+Solution:
+
+$$
+\Gamma=\{(x, 0)\}=\{(r, 0), r \in \mathbb{R}\}
+$$
+
+$$
+\left\{\begin{array}{ll}{\frac{d x}{d s}=u(x(r, s), t(r, s))=z(r, s),} & {x(r, 0)=r} \\ {\frac{d t}{d s}=1} & {t(r, 0)=0} \\ {\frac{d z}{d s}=0} & {z(r, 0)=\phi(r)}\end{array}\right.
+$$
+
+$$
+\left\{\begin{array}{l}{x=zs+r=\phi(r) s+r} \\ {t=s} \\ {z(r, s)=\phi(r)}\end{array}\right.
+$$
+
+$$
+u(x, t)=z(r,s)=\phi(x-u t)
+$$
+\end{example}
+
+Readers may have noticed that the $x=zs+r=\phi(r) s+r$, which will cause problems when two characteristic lines cross each other. At this time, the method fails.
+\subsubsection{Fully Nonlinear Equation}
+\begin{equation}
+\left\{\begin{matrix}
+F(x,y,u,\partial_x u,\partial_y u)=0, &\Longrightarrow F(x,y,z,p,q)=0 \\ 
+\left.u(x, y)\right|_{\Gamma}=\phi(x, y), \quad &\text { when } \quad \Gamma=\left\{\left(\gamma_{1}(r), \gamma_{2}(r)\right), r \in \cdots\right\}
+\end{matrix}\right.
+\end{equation}
+
+General solution:
+
+$$
+\frac{d z}{d s}=\frac{d u}{d s}(x_r(s), y_r(s))=\partial_x u \frac{d x}{d s}+\partial_y u\frac{d y}{d s}
+$$
+
+$$
+0=\frac{dF}{ds}=\left(\partial_{x} F+p\right) \frac{d x}{d s}+\left(\partial_{y} F+ q\right) \frac{d y}{d s}+\partial_{p} F \frac{d p}{d x_{1}}+\partial_{q} F \frac{d q}{d s}
+$$
+
+\subsubsection{Multi-dimensional Case}
+
+
+\section{Classic Solution to Conservation Laws}
