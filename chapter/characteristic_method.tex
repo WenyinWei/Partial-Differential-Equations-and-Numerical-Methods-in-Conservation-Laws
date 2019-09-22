@@ -1,4 +1,101 @@
+\part{PDE}
+\section{Introduction to PDE}
+
+This part mainly refer \footnote{姜礼尚. 数学物理方程讲义[M]. 高等教育出版社, 1961.}.
+
+与建立数学物理方程关系最密切的物理定律大致可以归结为两大类：1.守恒律；2.变分原理。常见的物理问题涵盖了弦振动、热传导、流体运动以及膜平衡、极小曲面等物理与几何例子。
+
+通常我们把初始条件和边界条件统称为定解条件，再加上 pde 方程本身则可以成为一个定解问题。边界条件分为第一边界条件 (Dirichlet)、第二边界条件 (Neumann)、第三边界条件。
+
+\subsection{Conservation Laws 守恒律}
+波动方程，
+
+\begin{equation}
+\frac{\partial^2 u}{\partial t^2}-a^2\Delta u =f.
+\end{equation}
+
+热传导方程，
+
+\begin{equation}
+\frac{\partial u}{\partial t}-a^2\Delta u =f.
+\end{equation}
+
+质量守恒方程
+
+\begin{equation}
+\frac{\partial \rho}{\partial t}+\nabla\cdot (\rho \boldsymbol{v}) =f.
+\end{equation}
+
+\subsection{变分原理}
+
+如果将函数的定义域扩大为某种集合，值域为实数域，即从一个集合到市属的映射称为泛函。例如将 $[a,b]$ 区间上的全体连续函数记为 $C([a,b])$,则对每一个该集合内的函数，都有一个对应的实数，这构成一个泛函。
+
+通常为积分形式，
+
+\begin{equation}
+f(x) \rightarrow \int_a^b f(x)dx
+\end{equation}
+
+\begin{definition}
+设 $\Omega$ 为 $bbR^2$ 中的区域，定义在 $\Omega$ 上的无穷次可微且在 $\Omega$ 的边界附近为零的函数的全体，记为 $C_0^\infty(\Omega)$.
+\end{definition}
+
+一个典型的 $bbR^2$ 上的试函数，$\rho(x,y)=ke^{-1/[1-(x^2+y^2)]}, x^2+y^2\leq 1$. 总可以选取 $k$ 使其在 $bbR^2$ 上积分为 $1$. One can expand the funciton $\rho_n(x,y)=n^2 \rho(nx,ny)$.
+
+\begin{lemma}
+Set $\Omega$ a bounded region in $bbR^2$, $f(x,y)$ continuous on $\Omega$, if for all $\phi(x,y)\in C_0^\infty (\Omega)$,
+
+$$\int\int_{\Omega} f(x,y)\phi(x,y)dxdy=0$$,
+
+then $f(x,y)\equiv 0$ on $\Omega$.
+\end{lemma}
+
+\subsubsection{Minimal Surface Problem}
+
+我们有一个曲面 $S$, 它的边界被我们定死了，可以被参数化表示为一条空间闭曲线 $l$。
+\begin{equation}
+l:\quad\begin{aligned} x &=x(s) \\ y &=y(s) \\ u &=\varphi(s) \end{aligned} \quad\left(0 \leqslant s \leqslant s_{0}\right)
+\end{equation}
+
+\begin{equation}
+J(v)=\iint_{\Omega} \sqrt{1+v_{x}^{2}+v_{y}^{2}} d x d y
+\end{equation}
+
+Now we want to get the minimal surface area funciton $u\in M_\phi=\{v|v\in C^1 (\overline{\Omega}),v|_{\partial \Omega}=\phi)\}$. 这也被称为是该变分问题的允许函数类。
+\begin{equation}
+J(u)=\underset{v \in M_{\phi}}{\operatorname{Min}} J(v)
+\end{equation}
+
+\subsection{定解问题的适定性}
+
+如果一个定解问题的解 \textbf{exist, unique, stable},那么我们称这个定解问题是\textbf{适定} 的。
+
+定解数据（如初值、边值和方程的非齐次项）一般都是通过实际测量得到的，它不可能完全正确，所以人们关心定解数据的微笑差异是否会引起解的完全失真？这是解的稳定性问题，即解是否连续依赖于定解数据？
+
+\begin{definition}
+Denote $G$ as a function set. If for each two functions $f_1,f_2\in G$, $a_1 f_1+a_2 f_2\in G (a_1,a_2\in \bbR)$, then $G$ is a linear space. If for each $f\in G$, there is a corresponding non-negative real $||f||$, and 
+\begin{enumerate}
+	\item if $f_1,f_2\in G$, $$||f_1+f_2||\leq ||f_1||+||f_2||$$;
+	\item if $f\in G, a\in \bbR$, $$||af||=|a|~ ||f||$$;
+	\item $||f||\geq 0$ holds, $||f||=0$ iff $f\equiv 0$,
+\end{enumerate} 
+then $G$ is 线性赋范空间, $||f||$ 称为 $f$ 的范数或模 (\textit{norm}).
+\end{definition}
+
+通常对初值的连续依赖可以表述为以下形式，
+
+For all $\epsilon>0$, there exists $\delta>0$, when $||\phi_1-\phi_2||_\Phi<\delta$, $$||u_1-u_2||_U<\epsilon$$.
+
+
+
+不适定的问题是客观存在的，如地质勘探、最优控制等，它们也有其研究价值。
+
+\section{Wave Equation 波动方程}
+
+
 \part{Characteristic Methods}
+
+
 \section{Characteristic Methods}
 \subsection{Characteristic Methods}
 We have seen many conservation laws in our daily math and physcis research. Here the introduction to the PDE is omitted temporarily.

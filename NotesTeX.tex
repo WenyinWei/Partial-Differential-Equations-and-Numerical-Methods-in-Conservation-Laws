@@ -1,9 +1,18 @@
 \documentclass[10pt]{article}
-\pdfoutput=1
+% \pdfoutput=1
 \usepackage{NotesTeX,lipsum}
 %\usepackage{showframe}
+\usepackage{xeCJK}
+\setCJKmainfont[BoldFont=SimHei]{SimSun}
+\setCJKfamilyfont{hei}{SimHei}
+\setCJKfamilyfont{kai}{KaiTi}
+\setCJKfamilyfont{fang}{FangSong}
+\newcommand{\hei}{\CJKfamily{hei}}
+\newcommand{\kai}{\CJKfamily{kai}}
+\newcommand{\fang}{\CJKfamily{fang}}
 
-\title{\begin{center}{\Huge \textit{Numerical Methods in Convservation Laws}}\end{center}}
+
+\title{\begin{center}{\Huge \textit{Partial Differential Equations and\\ Numerical Methods in Convservation Laws}}\end{center}}
 \author{Wenyin Wei\footnote{\href{https://wenyin.xyz/}{\textit{My Personal Website}}}}
 
 
