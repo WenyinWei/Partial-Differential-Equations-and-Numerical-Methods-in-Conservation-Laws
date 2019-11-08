@@ -140,6 +140,14 @@
 }
 
 \theoremstyle{mystyle}{
+  \newtheorem{corollary}[theorem]{Corollary}
+}
+
+\theoremstyle{mystyle}{
+  \newtheorem{proposition}[theorem]{Proposition}
+}
+
+\theoremstyle{mystyle}{
   \newtheorem*{example}{Example}
 }
 
@@ -176,6 +184,32 @@
   boxsep=2pt,
   blanker,
   borderline west={2pt}{0pt}{Red},
+  before skip=10pt,
+  after skip=10pt,
+  sharp corners,
+  left=12pt,
+  right=12pt,
+  breakable,
+}
+
+\tcolorboxenvironment{corollary}{
+  boxrule=0pt,
+  boxsep=2pt,
+  blanker,
+  borderline west={2pt}{0pt}{Cyan},
+  before skip=10pt,
+  after skip=10pt,
+  sharp corners,
+  left=12pt,
+  right=12pt,
+  breakable,
+}
+
+\tcolorboxenvironment{proposition}{
+  boxrule=0pt,
+  boxsep=2pt,
+  blanker,
+  borderline west={2pt}{0pt}{Gray},
   before skip=10pt,
   after skip=10pt,
   sharp corners,

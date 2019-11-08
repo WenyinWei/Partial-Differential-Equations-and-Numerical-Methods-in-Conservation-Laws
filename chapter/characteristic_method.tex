@@ -37,7 +37,7 @@ f(x) \rightarrow \int_a^b f(x)dx
 \end{equation}
 
 \begin{definition}
-设 $\Omega$ 为 $bbR^2$ 中的区域，定义在 $\Omega$ 上的无穷次可微且在 $\Omega$ 的边界附近为零的函数的全体，记为 $C_0^\infty(\Omega)$.
+设 $\Omega$ 为 $\bbR^2$ 中的区域，定义在 $\Omega$ 上的无穷次可微且在 $\Omega$ 的边界附近为零的函数的全体，记为 $C_0^\infty(\Omega)$.
 \end{definition}
 
 一个典型的 $bbR^2$ 上的试函数，$\rho(x,y)=ke^{-1/[1-(x^2+y^2)]}, x^2+y^2\leq 1$. 总可以选取 $k$ 使其在 $bbR^2$ 上积分为 $1$. One can expand the funciton $\rho_n(x,y)=n^2 \rho(nx,ny)$.
@@ -61,10 +61,46 @@ l:\quad\begin{aligned} x &=x(s) \\ y &=y(s) \\ u &=\varphi(s) \end{aligned} \qua
 J(v)=\iint_{\Omega} \sqrt{1+v_{x}^{2}+v_{y}^{2}} d x d y
 \end{equation}
 
-Now we want to get the minimal surface area funciton $u\in M_\phi=\{v|v\in C^1 (\overline{\Omega}),v|_{\partial \Omega}=\phi)\}$. 这也被称为是该变分问题的允许函数类。
+Now we want to get the minimal surface area funciton $u\in M_\phi=\{v|v\in C^1 (\overline{\Omega}),v|_{\partial \Omega}=\phi)\}$. 这类求泛函的极值问题被称为变分问题。这也被称为是该变分问题的允许函数类。
 \begin{equation}
 J(u)=\underset{v \in M_{\phi}}{\operatorname{Min}} J(v)
 \end{equation}
+
+\begin{equation}
+	j(\varepsilon)=J(u+\varepsilon v)
+\end{equation}
+
+\begin{equation}
+	j^{\prime}(\varepsilon)=\iint_{\Omega} \frac{(u+\varepsilon v)_{x} \cdot v_{x}+(u+\varepsilon r)_{y} \hat{v}_{y}}{\sqrt{1+\left(u_{x}+\varepsilon v_{x}\right)^{2}+\left(u_{y}+\varepsilon v_{y}\right)^{2}}} d x d y
+\end{equation}
+
+\begin{equation}
+	\iint_{\partial} \left[ \frac{u_{x}}{\sqrt{1+u_{x}^{2}+u_{y}^{2}}} v_{x}+\frac{u_{y}}{\sqrt{1+u_{x}^{2}+u_{y}^{2}}} v_{y}\right] d x d y=0
+\end{equation}
+
+
+如果 $u\in C^2 (\overline{\Omega})$, 由 Green 公式得到
+\begin{equation}
+\begin{array}{l}{-\iint_{\Omega}\left\{\frac{\partial}{\partial x}\left[\frac{u_{x}}{\sqrt{1+u_{x}^{2}+u_{y}^{2}}}\right]+\frac{\partial}{\partial y}\left[\frac{u_{y}}{\sqrt{1+u_{x}^{2}+x_{y}^{2}}}\right]\right\} v d x d y} \\ {+\oint_{\partial_{Q}} \frac{v}{\sqrt{1+u_{x}^{2}+u_{y}^{2}}} \cdot \frac{\partial u}{\partial n} d S=0}\end{array}
+\end{equation}
+
+由于 $v|_{\partial \Omega}=0$, 因此上式左端第二个积分为0， 从而由被积函数的连续性以及 $v$ 的任意性，得到
+
+\begin{equation}
+	\frac{\partial}{\partial x}\left[\frac{u_{x}}{\sqrt{1+u_{x}^{2}+u_{y}^{2}}}\right]+\frac{\partial}{\partial y}\left[\frac{u_{x}}{\sqrt{1+u_{x}^{2}+u_{y}^{2}}}\right]=0
+\end{equation}
+
+它被称为最小曲面问题的 Euler 方程。如果读者怀疑满足它的方程是极大值而不是极小值，那么可以试着求 $j^{\prime\prime}(\epsilon)$
+
+对 Euler 方程，如果满足 $\left|u_{x}\right|,\left|u_{y}\right| \ll 1$，我们可以将其线性化，原方程
+\begin{equation}
+	\left(1+u_{y}^{2}\right) u_{x x}-2 u_{x} u_{y} \cdot u_{x y}+\left(1+u_{x}^{2}\right) u_{y y}=0
+\end{equation}
+
+变为 $u_{s x}+u_{y y}=0$.
+
+
+
 
 \subsection{定解问题的适定性}
 
